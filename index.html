@@ -401,35 +401,35 @@
 
     /* ===== HERO ENTRANCE ANIMATION ===== */
 
-.hero-content,
-.hero-image {
-  opacity: 0;
-}
+    .hero-content,
+    .hero-image {
+      opacity: 0;
+    }
 
-.hero-content {
-  transform: translateX(-60px);
-  animation: slideInLeft 1.5s ease forwards;
-}
+    .hero-content {
+      transform: translateX(-60px);
+      animation: slideInLeft 1.5s ease forwards;
+    }
 
-.hero-image {
-  transform: translateX(60px);
-  animation: slideInRight 1.5s ease forwards;
-  animation-delay: 0.2s;
-}
+    .hero-image {
+      transform: translateX(60px);
+      animation: slideInRight 1.5s ease forwards;
+      animation-delay: 0.2s;
+    }
 
-@keyframes slideInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
-@keyframes slideInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
     /* ===== TOOLTIPS ===== */
     [data-tooltip] {
@@ -495,7 +495,7 @@
     .hero-image-wrapper img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      /* object-fit: cover; */
       border-radius: 24px;
       border: 2px solid var(--border);
     }
@@ -1083,6 +1083,179 @@
       }
     }
 
+    /* ===== CV SECTION ===== */
+    .cv-section-wrapper {
+      background: var(--bg-secondary);
+    }
+
+    .cv-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .cv-preview-left {
+      position: relative;
+    }
+
+    .cv-mockup {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .cv-mockup:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .cv-mockup-header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d50 100%);
+      padding: 28px 32px 24px;
+      position: relative;
+    }
+
+    .cv-mockup-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gradient-1);
+    }
+
+    .cv-mockup-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .cv-mockup-title {
+      font-size: 13px;
+      color: var(--accent-light);
+      font-weight: 500;
+    }
+
+    .cv-mockup-body {
+      padding: 24px 32px 28px;
+    }
+
+    .cv-mockup-section {
+      margin-bottom: 18px;
+    }
+
+    .cv-mockup-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-mockup-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .cv-mockup-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cv-mockup-line {
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .cv-mockup-line.short {
+      width: 60%;
+    }
+
+    .cv-mockup-line.medium {
+      width: 80%;
+    }
+
+    .cv-mockup-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cv-mockup-tag {
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      background: rgba(108, 99, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    .cv-info-right h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cv-info-right p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .cv-highlights {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .cv-highlights li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .cv-highlights li:last-child {
+      border-bottom: none;
+    }
+
+    .cv-highlights li i {
+      color: var(--success);
+      font-size: 14px;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .cv-btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cv-btn-group .btn {
+      padding: 14px 24px;
+    }
+
+    @media (max-width: 992px) {
+      .cv-preview {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
     @media (max-width: 480px) {
       .hero-image-wrapper {
         max-width: 220px;
@@ -1115,6 +1288,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <!-- <li><a href="#cv">CV</a></li> -->
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -1141,8 +1316,10 @@
           ideas into reality through technology.
         </p>
         <div class="hero-actions">
-          <a href="../../Downloads/SQI Brochure.pdf" class="btn btn-primary">
-            <i class="fa-solid fa-download"></i> Download CV
+          <a href="#cv" class="btn btn-primary" id="heroDownloadCV" id="directDownloadCV" onclick="downloadCVDirect()">
+            <!-- <i class="fa-solid fa-download"></i> Download CV -->
+            <i class="fa-solid fa-eye"></i> View Full CV
+
           </a>
           <a href="#projects" class="btn btn-outline">
             <i class="fa-solid fa-arrow-right"></i> View Projects
@@ -1161,7 +1338,8 @@
       </div>
       <div class="hero-image">
         <div class="hero-image-wrapper">
-          <img src="web.jpeg" alt="Kenny — Software Engineer">
+          <!-- <img src="web.jpeg" alt="Kenny — Software Engineer"> -->
+          <img src="Convo 2 compressed.jpg" alt="Kenny — Software Engineer">
           <div class="hero-float-card top">
             <i class="fa-solid fa-code"></i>
             <div>
@@ -1256,63 +1434,53 @@
             </div>
           </div>
         </div>
+
+
         <!-- Backend -->
-        <!-- <div class="skill-category reveal">
-          <div class="skill-category-icon"><i class="fa-solid fa-server"></i></div>
-          <h3>Backend</h3>
+        <div class="skill-category reveal">
+          <div class="skill-category-icon">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3>Backend & Database</h3>
+
           <div class="skill-item">
             <span class="skill-name">Node.js</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="75%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill-name">Express.js</span>
             <div class="skill-bar-track">
               <div class="skill-bar-fill" data-width="70%"></div>
             </div>
           </div>
-        </div> -->
-        
-        <!-- Backend -->
-<div class="skill-category reveal">
-  <div class="skill-category-icon">
-    <i class="fa-solid fa-server"></i>
-  </div>
-  <h3>Backend & Database</h3>
 
-  <div class="skill-item">
-    <span class="skill-name">Node.js</span>
-    <div class="skill-bar-track">
-      <div class="skill-bar-fill" data-width="75%"></div>
-    </div>
-  </div>
+          <div class="skill-item">
+            <span class="skill-name">MongoDB</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="70%"></div>
+            </div>
+          </div>
 
-  <div class="skill-item">
-    <span class="skill-name">Express.js</span>
-    <div class="skill-bar-track">
-      <div class="skill-bar-fill" data-width="70%"></div>
-    </div>
-  </div>
+          <div class="skill-item">
+            <span class="skill-name">Mongoose</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="65%"></div>
+            </div>
+          </div>
 
-  <div class="skill-item">
-    <span class="skill-name">MongoDB</span>
-    <div class="skill-bar-track">
-      <div class="skill-bar-fill" data-width="70%"></div>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <span class="skill-name">Mongoose</span>
-    <div class="skill-bar-track">
-      <div class="skill-bar-fill" data-width="65%"></div>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <span class="skill-name">REST APIs</span>
-    <div class="skill-bar-track">
-      <div class="skill-bar-fill" data-width="70%"></div>
-    </div>
-  </div>
-</div>
+          <div class="skill-item">
+            <span class="skill-name">REST APIs</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="70%"></div>
+            </div>
+          </div>
+        </div>
 
 
-        
+
         <!-- Tools -->
         <div class="skill-category reveal">
           <div class="skill-category-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
@@ -1337,9 +1505,56 @@
           </div>
         </div>
 
+        <!-- Mobile Development -->
+        <div class="skill-category reveal">
+          <div class="skill-category-icon"><i class="fa-solid fa-mobile"></i></div>
+          <h3>Mobile Development</h3>
+          
+          <div class="skill-item">
+            <span class="skill-name">React Native</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="65%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <span class="skill-name">Expo</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="60%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <span class="skill-name">Mobile UI Design</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="65%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Python & Backend Expansion -->
+        <div class="skill-category reveal">
+          <div class="skill-category-icon"><i class="fa-solid fa-snake"></i></div>
+          <h3>Python & Data</h3>
+          
+          <div class="skill-item">
+            <span class="skill-name">Python Fundamentals</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="55%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-item">
+            <span class="skill-name">Code First Girls Certified</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="50%"></div>
+            </div>
+          </div>
+        </div>
+
         <!-- Deployment & Cloud -->
 
-<!-- <div class="skill-category reveal">
+        <!-- <div class="skill-category reveal">
   <div class="skill-category-icon">
     <i class="fa-solid fa-server"></i>
   </div>
@@ -1555,6 +1770,221 @@
     </div>
   </section>
 
+  <!-- ===== CERTIFICATIONS & EDUCATION ===== -->
+  <section class="section" id="certifications" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:48px;">
+        <span class="section-label">// Certifications & Education</span>
+        <h2 class="section-title">Learning & <span class="highlight">Credentials</span></h2>
+        <p class="section-subtitle" style="margin:0 auto;">Continuous learning and professional development</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        
+        <!-- Certification 1: NOUN Degree -->
+        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default;">
+          <style>
+            .cert-card {
+              background: var(--bg-card);
+              border: 1px solid var(--border);
+              border-radius: 20px;
+              padding: 32px;
+              transition: var(--transition);
+            }
+            .cert-card:hover {
+              border-color: var(--accent);
+              transform: translateY(-4px);
+              box-shadow: 0 0 40px rgba(108, 99, 255, 0.3);
+            }
+            .cert-icon {
+              width: 56px;
+              height: 56px;
+              background: rgba(108, 99, 255, 0.12);
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 28px;
+              color: var(--accent);
+              margin-bottom: 20px;
+            }
+            .cert-title {
+              font-size: 18px;
+              font-weight: 700;
+              margin-bottom: 8px;
+              color: var(--text-primary);
+            }
+            .cert-issuer {
+              font-size: 14px;
+              color: var(--accent);
+              font-weight: 600;
+              margin-bottom: 4px;
+            }
+            .cert-date {
+              font-size: 13px;
+              color: var(--text-muted);
+              margin-bottom: 16px;
+            }
+            .cert-description {
+              font-size: 14px;
+              color: var(--text-secondary);
+              line-height: 1.6;
+              margin-bottom: 16px;
+            }
+            .cert-badge {
+              display: inline-block;
+              background: rgba(108, 99, 255, 0.1);
+              color: var(--accent);
+              padding: 6px 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+          </style>
+          
+          <div class="cert-card">
+            <div class="cert-icon">🎓</div>
+            <div class="cert-title">B.A. (Hons.) Second Class (Upper Division)</div>
+            <div class="cert-issuer">National Open University of Nigeria (NOUN)</div>
+            <div class="cert-date">March 2026 • English Major</div>
+            <div class="cert-description">
+              Bachelor of Arts degree with focus on English language studies. Completed all coursework and examinations successfully.
+            </div>
+            <span class="cert-badge">Verified</span>
+          </div>
+        </div>
+
+        <!-- Certification 2: Code First Girls Python -->
+        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default;">
+          <div class="cert-card">
+            <div class="cert-icon">🐍</div>
+            <div class="cert-title">Python Kickstarter Course</div>
+            <div class="cert-issuer">Code First Girls</div>
+            <div class="cert-date">June 2026 • Introduction to Python</div>
+            <div class="cert-description">
+              Completed introductory Python programming course covering fundamentals, data structures, and practical coding skills. Hands-on learning experience.
+            </div>
+            <span class="cert-badge">Certified</span>
+          </div>
+        </div>
+
+        <!-- Upcoming: React Native Project -->
+        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default; opacity: 0.7;">
+          <div class="cert-card">
+            <div class="cert-icon">📱</div>
+            <div class="cert-title">React Native & Expo Project</div>
+            <div class="cert-issuer">In Progress</div>
+            <div class="cert-date">Coming Soon • E-Commerce Mobile App</div>
+            <div class="cert-description">
+              Currently building a full-featured mobile e-commerce application using React Native and Expo. Features include product browsing, cart management, and user authentication.
+            </div>
+            <span class="cert-badge" style="background: rgba(229, 99, 255, 0.1); color: #e563ff;">Building</span>
+          </div>
+        </div>
+
+        <!-- Upcoming: Python Project -->
+        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default; opacity: 0.7;">
+          <div class="cert-card">
+            <div class="cert-icon">🚀</div>
+            <div class="cert-title">Python Backend Project</div>
+            <div class="cert-issuer">Planned</div>
+            <div class="cert-date">Coming Soon • Data Analysis / Automation</div>
+            <div class="cert-description">
+              Building a Python project to showcase backend development skills. Will feature real-world application of Python fundamentals learned from Code First Girls.
+            </div>
+            <span class="cert-badge" style="background: rgba(0, 214, 126, 0.1); color: #00d67e;">Planned</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CV SECTION ===== -->
+  <!-- <section class="cv-section-wrapper section" id="cv">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin-bottom:48px;">
+        <span class="section-label">// Curriculum Vitae</span>
+        <h2 class="section-title">My Professional <span class="highlight">CV</span></h2>
+        <p class="section-subtitle" style="margin:0 auto;">A comprehensive overview of my skills, experience, and projects — ready for download.</p>
+      </div>
+      <div class="cv-preview">
+        Left: CV Mockup Preview
+        <div class="cv-preview-left reveal">
+          <div class="cv-mockup">
+            <div class="cv-mockup-header">
+              <div class="cv-mockup-name">FUMILOLA KADRI</div>
+              <div class="cv-mockup-title">Software Engineer — Full Stack Web Developer</div>
+            </div>
+            <div class="cv-mockup-body">
+              <div class="cv-mockup-section">
+                <div class="cv-mockup-label">Technical Skills</div>
+                <div class="cv-mockup-tags">
+                  <span class="cv-mockup-tag">JavaScript</span>
+                  <span class="cv-mockup-tag">React</span>
+                  <span class="cv-mockup-tag">Node.js</span>
+                  <span class="cv-mockup-tag">Express</span>
+                  <span class="cv-mockup-tag">MongoDB</span>
+                  <span class="cv-mockup-tag">Firebase</span>
+                  <span class="cv-mockup-tag">REST APIs</span>
+                  <span class="cv-mockup-tag">Git</span>
+                </div>
+              </div>
+              <div class="cv-mockup-section">
+                <div class="cv-mockup-label">Experience</div>
+                <div class="cv-mockup-lines">
+                  <div class="cv-mockup-line"></div>
+                  <div class="cv-mockup-line medium"></div>
+                  <div class="cv-mockup-line short"></div>
+                </div>
+              </div>
+              <div class="cv-mockup-section">
+                <div class="cv-mockup-label">Projects</div>
+                <div class="cv-mockup-lines">
+                  <div class="cv-mockup-line"></div>
+                  <div class="cv-mockup-line medium"></div>
+                  <div class="cv-mockup-line short"></div>
+                </div>
+              </div>
+              <div class="cv-mockup-section">
+                <div class="cv-mockup-label">Education</div>
+                <div class="cv-mockup-lines">
+                  <div class="cv-mockup-line medium"></div>
+                  <div class="cv-mockup-line short"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        Right: Info + Download
+        <div class="cv-info-right reveal">
+          <h3>Ready to impress employers</h3>
+          <p>
+            My CV showcases a complete picture of my technical expertise, project portfolio, and professional capabilities.
+            It's designed with ATS-friendly formatting to maximize visibility with recruiters and hiring managers.
+          </p>
+          <ul class="cv-highlights">
+            <li><i class="fa-solid fa-circle-check"></i> Full-stack skills: Frontend, Backend, Database & Cloud</li>
+            <li><i class="fa-solid fa-circle-check"></i> 6+ production-deployed web applications</li>
+            <li><i class="fa-solid fa-circle-check"></i> Real-time features, authentication & payment integration</li>
+            <li><i class="fa-solid fa-circle-check"></i> Clean code practices & modern development workflow</li>
+            <li><i class="fa-solid fa-circle-check"></i> ATS-optimized format for maximum recruiter visibility</li>
+          </ul>
+          <div class="cv-btn-group">
+            <a href="kenny-cv.html" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-eye"></i> View Full CV
+            </a>
+            <button class="btn btn-outline" id="directDownloadCV" onclick="downloadCVDirect()">
+              <i class="fa-solid fa-download"></i> Download PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
   <!-- ===== CONTACT ===== -->
   <section class="section" id="contact">
     <div class="container">
@@ -1589,7 +2019,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <input type="text" id="name" name="name" placeholder="John Mark" required>
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
@@ -1714,6 +2144,17 @@
     }, { threshold: 0.15 });
 
     revealElements.forEach(el => observer.observe(el));
+
+    // --- CV Download (generates PDF from the CV page) ---
+    function downloadCVDirect() {
+      // Open the CV page (users can download from there)
+      window.open('kenny-cv.html', '_blank');
+    }
+
+    // Hero Download CV button scrolls to CV section
+    document.getElementById('heroDownloadCV').addEventListener('click', function (e) {
+      // Let the anchor behavior work (scrolls to #cv)
+    });
 
     // --- Contact Form Submission via FormSubmit ---
     const contactForm = document.getElementById('contactForm');
