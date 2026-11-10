@@ -1274,131 +1274,133 @@
         justify-content: center;
       }
     }
-  
-/* ===== CERTIFICATE MODAL ===== */
-.cert-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  animation: fadeIn 0.3s ease;
-}
 
-.cert-modal.active {
-  display: flex;
-}
+    /* ===== CERTIFICATE MODAL ===== */
+    .cert-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      animation: fadeIn 0.3s ease;
+    }
 
-.cert-modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-  height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: scaleIn 0.3s ease;
-}
+    .cert-modal.active {
+      display: flex;
+    }
 
-@media (max-width: 768px) {
-  .cert-modal-content {
-    width: 95%;
-    height: 80vh;
-  }
-}
+    .cert-modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: scaleIn 0.3s ease;
+    }
 
-@media (max-width: 480px) {
-  .cert-modal-content {
-    width: 98%;
-    height: 75vh;
-  }
-}
+    @media (max-width: 768px) {
+      .cert-modal-content {
+        width: 95%;
+        height: 80vh;
+      }
+    }
 
-.cert-modal-content img,
-.cert-modal-content iframe {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  background: white; /* In case PDF has transparent background */
-}
+    @media (max-width: 480px) {
+      .cert-modal-content {
+        width: 98%;
+        height: 75vh;
+      }
+    }
 
-.cert-modal-close {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  width: 36px;
-  height: 36px;
-  background: rgba(26, 26, 46, 0.9);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--accent);
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  z-index: 10;
-}
+    .cert-modal-content img,
+    .cert-modal-content iframe {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      background: white;
+      /* In case PDF has transparent background */
+    }
 
-.cert-modal-close:hover {
-  background: var(--accent);
-  color: #fff;
-  transform: scale(1.1);
-}
+    .cert-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      background: rgba(26, 26, 46, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--accent);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 10;
+    }
 
-@media (max-width: 768px) {
-  .cert-modal-close {
-    top: -40px;
-    right: 0;
-  }
-}
+    .cert-modal-close:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.1);
+    }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    @media (max-width: 768px) {
+      .cert-modal-close {
+        top: -40px;
+        right: 0;
+      }
+    }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
-/* Make certificate cards clickable */
-.cert-card {
-  cursor: pointer;
-}
+      to {
+        opacity: 1;
+      }
+    }
 
-.cert-card:not(.coming-soon) {
-  transition: var(--transition);
-}
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
 
-.cert-card:not(.coming-soon):hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 0 40px rgba(108, 99, 255, 0.3);
-}
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-          </style>
+    /* Make certificate cards clickable */
+    .cert-card {
+      cursor: pointer;
+    }
+
+    .cert-card:not(.coming-soon) {
+      transition: var(--transition);
+    }
+
+    .cert-card:not(.coming-soon):hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 0 40px rgba(108, 99, 255, 0.3);
+    }
+  </style>
 </head>
 
 <body>
@@ -1436,8 +1438,8 @@
           <span class="cursor"></span>
         </p>
         <p class="hero-desc">
-          I build modern, performant web experiences with clean code and pixel-perfect designs. Passionate about turning
-          ideas into reality through technology.
+          I build modern web and mobile apps with clean code and pixel-perfect designs. I also work as a contributor
+          and collaborator, fixing bugs and solving problems alongside other developers.
         </p>
         <div class="hero-actions">
           <a href="#cv" class="btn btn-primary" id="heroDownloadCV" id="directDownloadCV" onclick="downloadCVDirect()">
@@ -1491,11 +1493,13 @@
         <h2 class="section-title">Crafting Digital <span class="highlight">Experiences</span></h2>
         <p class="about-text">
           I'm a passionate software engineer focused on building beautiful, functional, and user-centered digital
-          products. I'm always looking for new and innovative ways to bring my clients' visions to life.
+          products, from websites to mobile apps. I'm always looking for new and innovative ways to bring my clients'
+          visions to life.
         </p>
         <p class="about-text">
-          With expertise spanning front-end and back-end technologies, I thrive on solving complex problems and
-          delivering seamless web applications that make an impact.
+          With experience across front-end, back-end, and mobile development, I thrive on solving complex problems and
+          building applications that make an impact. I also work as a contributor and collaborator on team projects,
+          where I fix bugs, solve technical problems, and help ship new features.
         </p>
       </div>
       <div class="about-stats reveal">
@@ -1504,11 +1508,11 @@
           <div class="stat-label">Projects Completed</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">1+</div>
+          <div class="stat-number" id="experience">2+</div>
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">6+</div>
+          <div class="stat-number">8+</div>
           <div class="stat-label">Technologies</div>
         </div>
         <div class="stat-card">
@@ -1549,6 +1553,18 @@
             <span class="skill-name">React</span>
             <div class="skill-bar-track">
               <div class="skill-bar-fill" data-width="70%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">TypeScript</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="60%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Next.js</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="60%"></div>
             </div>
           </div>
           <div class="skill-item">
@@ -1601,6 +1617,27 @@
               <div class="skill-bar-fill" data-width="70%"></div>
             </div>
           </div>
+
+          <div class="skill-item">
+            <span class="skill-name">GraphQL</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="55%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill-name">PHP</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="55%"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <span class="skill-name">MySQL</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="55%"></div>
+            </div>
+          </div>
         </div>
 
 
@@ -1633,21 +1670,21 @@
         <div class="skill-category reveal">
           <div class="skill-category-icon"><i class="fa-solid fa-mobile"></i></div>
           <h3>Mobile Development</h3>
-          
+
           <div class="skill-item">
             <span class="skill-name">React Native</span>
             <div class="skill-bar-track">
               <div class="skill-bar-fill" data-width="65%"></div>
             </div>
           </div>
-          
+
           <div class="skill-item">
             <span class="skill-name">Expo</span>
             <div class="skill-bar-track">
               <div class="skill-bar-fill" data-width="60%"></div>
             </div>
           </div>
-          
+
           <div class="skill-item">
             <span class="skill-name">Mobile UI Design</span>
             <div class="skill-bar-track">
@@ -1660,14 +1697,21 @@
         <div class="skill-category reveal">
           <div class="skill-category-icon"><i class="fa-solid fa-snake"></i></div>
           <h3>Python & Data</h3>
-          
+
           <div class="skill-item">
             <span class="skill-name">Python Fundamentals</span>
             <div class="skill-bar-track">
               <div class="skill-bar-fill" data-width="55%"></div>
             </div>
           </div>
-          
+
+          <div class="skill-item">
+            <span class="skill-name">Data Structures & Algorithms</span>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="55%"></div>
+            </div>
+          </div>
+
           <div class="skill-item">
             <span class="skill-name">Code First Girls Certified</span>
             <div class="skill-bar-track">
@@ -1720,6 +1764,7 @@
           in my journey.</p>
       </div>
       <div class="projects-grid">
+        <!-- Project: VUKA job board (PHP & MySQL) -->
         <!-- Project 1 -->
         <div class="project-card reveal">
           <div class="project-thumb">
@@ -1747,6 +1792,38 @@
             </div>
           </div>
         </div>
+                   <!-- ADDITIONAL PROJECT -->
+                <div class="project-card reveal">
+                  <div class="project-thumb">
+                    <img src="vukaScreenshotPortfolio.png" alt="VUKA job board homepage">
+                    <div class="project-overlay"></div>
+                  </div>
+                  <div class="project-body">
+                    <div class="project-tags">
+                      <span class="project-tag">PHP</span>
+                      <span class="project-tag">MySQL</span>
+                      <span class="project-tag">Bootstrap 5</span>
+                      <span class="project-tag">JavaScript</span>
+                      <span class="project-tag">Sessions &amp; Auth</span>
+                      <span class="project-tag">Role-Based Access</span>
+                      <span class="project-tag">Prepared Statements</span>
+                      <span class="project-tag">Responsive UI</span>
+                    </div>
+                    <h3>VUKA: Full-Stack Job Board (PHP &amp; MySQL)</h3>
+                    <p>A job board built with plain PHP and MySQL. Employers post openings from a protected admin dashboard,
+                      while job seekers search, filter, and save jobs. Features hashed passwords, session-based login,
+                      role-based access, and prepared statements.</p>
+                    <div class="project-links">
+                      <a href="http://vuka.freedev.app" target="_blank" class="view-link">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                      </a>
+                      <a href="https://github.com/Akenne-dev/VukaPhp" target="_blank" class="code-link">
+                        <i class="fa-brands fa-github"></i> Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
         <!-- Project 2 -->
         <div class="project-card reveal">
           <div class="project-thumb">
@@ -1902,11 +1979,13 @@
         <h2 class="section-title">Learning & <span class="highlight">Credentials</span></h2>
         <p class="section-subtitle" style="margin:0 auto;">Continuous learning and professional development</p>
       </div>
-      
+
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        
+
         <!-- Certification 1: NOUN Degree -->
-        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: pointer;" onclick="openCertModal('nounModal')">
+        <div class="reveal"
+          style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: pointer;"
+          onclick="openCertModal('nounModal')">
           <style>
             .cert-card {
               background: var(--bg-card);
@@ -1915,11 +1994,13 @@
               padding: 32px;
               transition: var(--transition);
             }
+
             .cert-card:hover {
               border-color: var(--accent);
               transform: translateY(-4px);
               box-shadow: 0 0 40px rgba(108, 99, 255, 0.3);
             }
+
             .cert-icon {
               width: 56px;
               height: 56px;
@@ -1932,29 +2013,34 @@
               color: var(--accent);
               margin-bottom: 20px;
             }
+
             .cert-title {
               font-size: 18px;
               font-weight: 700;
               margin-bottom: 8px;
               color: var(--text-primary);
             }
+
             .cert-issuer {
               font-size: 14px;
               color: var(--accent);
               font-weight: 600;
               margin-bottom: 4px;
             }
+
             .cert-date {
               font-size: 13px;
               color: var(--text-muted);
               margin-bottom: 16px;
             }
+
             .cert-description {
               font-size: 14px;
               color: var(--text-secondary);
               line-height: 1.6;
               margin-bottom: 16px;
             }
+
             .cert-badge {
               display: inline-block;
               background: rgba(108, 99, 255, 0.1);
@@ -1967,14 +2053,15 @@
               letter-spacing: 0.5px;
             }
           </style>
-          
+
           <div class="cert-card">
             <div class="cert-icon">🎓</div>
             <div class="cert-title">B.A. (Hons.) Second Class (Upper Division)</div>
             <div class="cert-issuer">National Open University of Nigeria (NOUN)</div>
             <div class="cert-date">March 2026 • English Major</div>
             <div class="cert-description">
-              Bachelor of Arts degree with focus on English language studies. Completed all coursework and examinations successfully.
+              Bachelor of Arts degree with focus on English language studies. Completed all coursework and examinations
+              successfully.
             </div>
             <span class="cert-badge">Verified</span>
             <div style="margin-top: 16px; font-size: 12px; color: var(--accent); font-weight: 600;">
@@ -1984,14 +2071,17 @@
         </div>
 
         <!-- Certification 2: Code First Girls Python -->
-        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: pointer;" onclick="openCertModal('cfgModal')">
+        <div class="reveal"
+          style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: pointer;"
+          onclick="openCertModal('cfgModal')">
           <div class="cert-card">
             <div class="cert-icon">🐍</div>
             <div class="cert-title">Python Kickstarter Course</div>
             <div class="cert-issuer">Code First Girls</div>
             <div class="cert-date">June 2026 • Introduction to Python</div>
             <div class="cert-description">
-              Completed introductory Python programming course covering fundamentals, data structures, and practical coding skills. Hands-on learning experience.
+              Completed introductory Python programming course covering fundamentals, data structures, and practical
+              coding skills. Hands-on learning experience.
             </div>
             <span class="cert-badge">Certified</span>
             <div style="margin-top: 16px; font-size: 12px; color: var(--accent); font-weight: 600;">
@@ -2001,28 +2091,32 @@
         </div>
 
         <!-- Upcoming: React Native Project -->
-        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default; opacity: 0.7;">
+        <div class="reveal"
+          style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default; opacity: 0.7;">
           <div class="cert-card">
             <div class="cert-icon">📱</div>
             <div class="cert-title">React Native & Expo Project</div>
             <div class="cert-issuer">In Progress</div>
             <div class="cert-date">Coming Soon • E-Commerce Mobile App</div>
             <div class="cert-description">
-              Currently building a full-featured mobile e-commerce application using React Native and Expo. Features include product browsing, cart management, and user authentication.
+              Currently building a full-featured mobile e-commerce application using React Native and Expo. Features
+              include product browsing, cart management, and user authentication.
             </div>
             <span class="cert-badge" style="background: rgba(229, 99, 255, 0.1); color: #e563ff;">Building</span>
           </div>
         </div>
 
         <!-- Upcoming: Python Project -->
-        <div class="reveal" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default; opacity: 0.7;">
+        <div class="reveal"
+          style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: var(--transition); cursor: default; opacity: 0.7;">
           <div class="cert-card">
             <div class="cert-icon">🚀</div>
             <div class="cert-title">Python Backend Project</div>
             <div class="cert-issuer">Planned</div>
             <div class="cert-date">Coming Soon • Data Analysis / Automation</div>
             <div class="cert-description">
-              Building a Python project to showcase backend development skills. Will feature real-world application of Python fundamentals learned from Code First Girls.
+              Building a Python project to showcase backend development skills. Will feature real-world application of
+              Python fundamentals learned from Code First Girls.
             </div>
             <span class="cert-badge" style="background: rgba(0, 214, 126, 0.1); color: #00d67e;">Planned</span>
           </div>
@@ -2032,88 +2126,6 @@
     </div>
   </section>
 
-  <!-- ===== CV SECTION ===== -->
-  <!-- <section class="cv-section-wrapper section" id="cv">
-    <div class="container">
-      <div class="reveal" style="text-align:center; margin-bottom:48px;">
-        <span class="section-label">// Curriculum Vitae</span>
-        <h2 class="section-title">My Professional <span class="highlight">CV</span></h2>
-        <p class="section-subtitle" style="margin:0 auto;">A comprehensive overview of my skills, experience, and projects — ready for download.</p>
-      </div>
-      <div class="cv-preview">
-        Left: CV Mockup Preview
-        <div class="cv-preview-left reveal">
-          <div class="cv-mockup">
-            <div class="cv-mockup-header">
-              <div class="cv-mockup-name">FUMILOLA KADRI</div>
-              <div class="cv-mockup-title">Software Engineer — Full Stack Web Developer</div>
-            </div>
-            <div class="cv-mockup-body">
-              <div class="cv-mockup-section">
-                <div class="cv-mockup-label">Technical Skills</div>
-                <div class="cv-mockup-tags">
-                  <span class="cv-mockup-tag">JavaScript</span>
-                  <span class="cv-mockup-tag">React</span>
-                  <span class="cv-mockup-tag">Node.js</span>
-                  <span class="cv-mockup-tag">Express</span>
-                  <span class="cv-mockup-tag">MongoDB</span>
-                  <span class="cv-mockup-tag">Firebase</span>
-                  <span class="cv-mockup-tag">REST APIs</span>
-                  <span class="cv-mockup-tag">Git</span>
-                </div>
-              </div>
-              <div class="cv-mockup-section">
-                <div class="cv-mockup-label">Experience</div>
-                <div class="cv-mockup-lines">
-                  <div class="cv-mockup-line"></div>
-                  <div class="cv-mockup-line medium"></div>
-                  <div class="cv-mockup-line short"></div>
-                </div>
-              </div>
-              <div class="cv-mockup-section">
-                <div class="cv-mockup-label">Projects</div>
-                <div class="cv-mockup-lines">
-                  <div class="cv-mockup-line"></div>
-                  <div class="cv-mockup-line medium"></div>
-                  <div class="cv-mockup-line short"></div>
-                </div>
-              </div>
-              <div class="cv-mockup-section">
-                <div class="cv-mockup-label">Education</div>
-                <div class="cv-mockup-lines">
-                  <div class="cv-mockup-line medium"></div>
-                  <div class="cv-mockup-line short"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        Right: Info + Download
-        <div class="cv-info-right reveal">
-          <h3>Ready to impress employers</h3>
-          <p>
-            My CV showcases a complete picture of my technical expertise, project portfolio, and professional capabilities.
-            It's designed with ATS-friendly formatting to maximize visibility with recruiters and hiring managers.
-          </p>
-          <ul class="cv-highlights">
-            <li><i class="fa-solid fa-circle-check"></i> Full-stack skills: Frontend, Backend, Database & Cloud</li>
-            <li><i class="fa-solid fa-circle-check"></i> 6+ production-deployed web applications</li>
-            <li><i class="fa-solid fa-circle-check"></i> Real-time features, authentication & payment integration</li>
-            <li><i class="fa-solid fa-circle-check"></i> Clean code practices & modern development workflow</li>
-            <li><i class="fa-solid fa-circle-check"></i> ATS-optimized format for maximum recruiter visibility</li>
-          </ul>
-          <div class="cv-btn-group">
-            <a href="kenny-cv.html" target="_blank" class="btn btn-primary">
-              <i class="fa-solid fa-eye"></i> View Full CV
-            </a>
-            <button class="btn btn-outline" id="directDownloadCV" onclick="downloadCVDirect()">
-              <i class="fa-solid fa-download"></i> Download PDF
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <!-- ===== CONTACT ===== -->
   <section class="section" id="contact">
@@ -2149,11 +2161,11 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="John Mark" required>
+              <input type="text" id="name" name="name" placeholder="Kenny Kadri" required>
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              <input type="email" id="email" name="email" placeholder="kenny@example.com" required>
             </div>
           </div>
           <div class="form-group">
@@ -2176,7 +2188,7 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-copy">&copy; 2026 Kenny. All rights reserved.</p>
+      <p class="footer-copy">&copy; <span id="year">2026</span> Kenny. All rights reserved.</p>
       <div class="footer-links">
         <a href="#" aria-label="GitHub" data-tooltip="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="#" aria-label="LinkedIn" data-tooltip="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -2339,70 +2351,76 @@
   </script>
 
 
-<!-- ===== CERTIFICATE MODALS ===== -->
+  <!-- ===== CERTIFICATE MODALS ===== -->
 
-<!-- NOUN Degree Certificate Modal -->
-<div class="cert-modal" id="nounModal">
-  <div class="cert-modal-content">
-    <button class="cert-modal-close" onclick="closeCertModal('nounModal')">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    <img src="Bachelor_of_Arts_Degree_Certificate_-_Kadri_Kehinde_Karimat__Jpeg_.jpg" 
-         alt="NOUN Bachelor of Arts Degree Certificate"
-         loading="lazy">
+  <!-- NOUN Degree Certificate Modal -->
+  <div class="cert-modal" id="nounModal">
+    <div class="cert-modal-content">
+      <button class="cert-modal-close" onclick="closeCertModal('nounModal')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="B.A-Cert.jpg" alt="NOUN Bachelor of Arts Degree Certificate" loading="lazy">
+    </div>
   </div>
-</div>
 
-<!-- Code First Girls Python Certificate Modal -->
-<div class="cert-modal" id="cfgModal">
-  <div class="cert-modal-content">
-    <button class="cert-modal-close" onclick="closeCertModal('cfgModal')">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    <iframe src="Certificate_-_Kehinde_Kadri.pdf" 
-            alt="Code First Girls Python Certificate"
-            style="width: 100%; height: 100%; border: none; border-radius: 12px;">
-    </iframe>
+  <!-- Code First Girls Python Certificate Modal -->
+  <div class="cert-modal" id="cfgModal">
+    <div class="cert-modal-content">
+      <button class="cert-modal-close" onclick="closeCertModal('cfgModal')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img src="CFG-Cert.jpg" alt="Code First Girls Python Certificate" loading="lazy">
+    </div>
   </div>
-</div>
 
-<script>
-// --- Certificate Modal Functions ---
+  <script>
+    // --- Certificate Modal Functions ---
 
-function openCertModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
-  }
-}
-
-function closeCertModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
-  }
-}
-
-// Close modal when clicking outside the image
-document.querySelectorAll('.cert-modal').forEach(modal => {
-  modal.addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeCertModal(this.id);
+    function openCertModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
     }
-  });
-});
 
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.cert-modal.active').forEach(modal => {
-      closeCertModal(modal.id);
+    function closeCertModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      }
+    }
+
+    // Close modal when clicking outside the image
+    document.querySelectorAll('.cert-modal').forEach(modal => {
+      modal.addEventListener('click', function (e) {
+        if (e.target === this) {
+          closeCertModal(this.id);
+        }
+      });
     });
-  }
-});
-</script>
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.cert-modal.active').forEach(modal => {
+          closeCertModal(modal.id);
+        });
+      }
+    });
+
+    // Show the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Years of experience (goes up by 1 every July)
+    const today = new Date();
+    let experience = today.getFullYear() - 2024; // I started in July 2024
+    if (today.getMonth() < 6) {                  // before July? (January = 0, July = 6)
+      experience = experience - 1;
+    }
+    document.getElementById('experience').textContent = experience + '+';
+  </script>
 
 </body>
 
