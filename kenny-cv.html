@@ -229,9 +229,12 @@
     }
 
     /* ===== PRINT / SAVE AS PDF ===== */
+    /* Top/bottom space comes from the page margin. Left/right space comes from
+       the .cv padding below, so the sides stay clear even if the print window's
+       "Margins" option is set to None or Minimum. */
     @page {
       size: A4;
-      margin: 14mm 16mm;
+      margin: 14mm 0;
     }
 
     @media print {
@@ -247,7 +250,7 @@
       .cv {
         max-width: none;
         margin: 0;
-        padding: 0;
+        padding: 0 20mm;
         box-shadow: none;
       }
 
@@ -294,7 +297,7 @@
   <div class="top-bar">
     <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
     <button class="btn-download" onclick="window.print()"><i class="fa-solid fa-download"></i> Download PDF</button>
-    <p class="top-bar-hint">In the print window, choose "Save as PDF" as the printer.</p>
+    <p class="top-bar-hint">In the print window, choose "Save as PDF" as the printer and leave Margins on "Default".</p>
   </div>
 
   <!-- ===== CV ===== -->
@@ -321,10 +324,11 @@
       <h2>Professional Summary</h2>
       <p>
         Full-stack software engineer with <span id="experience">2+</span> years of experience building web and mobile
-        applications with JavaScript, TypeScript, React, Next.js, React Native, Node.js, and PHP. Works as a remote
-        contributor on Shipd Olympus, fixing bugs, building features, and optimizing code in Rust, JavaScript,
-        TypeScript, and Python codebases. Has built and deployed full-stack applications with user authentication,
-        online payments, real-time data, and both SQL and NoSQL databases.
+        applications with JavaScript, TypeScript, React, Next.js, React Native, Node.js, and PHP. Currently a frontend
+        developer on SACS CyberSafe, a cybersecurity awareness platform, and a contributor on Shipd Olympus, fixing
+        bugs, building features, and optimizing code in Rust, JavaScript, TypeScript, and Python. Has built and deployed
+        full-stack applications with user authentication, online payments, real-time data, and both SQL and NoSQL
+        databases.
       </p>
     </section>
 
@@ -333,12 +337,13 @@
       <h2>Technical Skills</h2>
       <ul class="skills-list">
         <li><strong>Languages:</strong> JavaScript (ES6+), TypeScript, Python, Rust, PHP, SQL, HTML5, CSS3</li>
-        <li><strong>Frontend:</strong> React, Next.js, Bootstrap, Responsive Design</li>
+        <li><strong>Frontend:</strong> React, Next.js, Tailwind CSS, Bootstrap, Responsive Design, Browser Extensions
+          (WXT)</li>
         <li><strong>Mobile:</strong> React Native, Expo</li>
         <li><strong>Backend &amp; APIs:</strong> Node.js, Express.js, REST APIs, GraphQL</li>
         <li><strong>Databases:</strong> MongoDB (Mongoose), MySQL, Firebase Cloud Firestore, Firebase Realtime Database</li>
-        <li><strong>Tools &amp; Services:</strong> Git, GitHub, Firebase Authentication, Paystack API, Render, Surge, npm,
-          Chrome DevTools</li>
+        <li><strong>Tools &amp; Services:</strong> Git, GitHub, Turborepo, Firebase Authentication, Paystack API, Render,
+          Surge, npm, Chrome DevTools</li>
         <li><strong>Core:</strong> Data Structures &amp; Algorithms, Debugging, MVC Architecture</li>
       </ul>
     </section>
@@ -346,6 +351,24 @@
     <!-- EXPERIENCE -->
     <section class="cv-section">
       <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Frontend Developer, Contributor</h3>
+          <span class="entry-date">June 2026 – Present</span>
+        </div>
+        <p class="entry-sub">SACS CyberSafe · Remote · Next.js, React, TypeScript, Tailwind CSS</p>
+        <ul>
+          <li>Build the user interface for a cybersecurity awareness platform made up of a web dashboard and a browser
+            extension, turning approved Figma designs into working pages.</li>
+          <li>Built the admin and staff dashboards, threat activity page, and settings page in a shared Turborepo
+            monorepo.</li>
+          <li>Developed the security training module (red flags, real-world scenarios, quizzes, and prevention steps)
+            and the step-by-step incident reporting flow.</li>
+          <li>Built the authentication screens (sign up, log in, forgot password, set password) and the browser
+            extension's onboarding flow.</li>
+        </ul>
+      </div>
 
       <div class="entry">
         <div class="entry-head">
